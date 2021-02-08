@@ -1,6 +1,7 @@
 const theMeal=()=>{
     
     const name=document.getElementById('name').value
+
     const foods=document.getElementById('foods')
     foods.style.display='block'
     foods.innerHTML=''
@@ -8,10 +9,14 @@ const theMeal=()=>{
     details.style.display='none'
     
 
+    if(name){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+        .then(response => response.json())
+        .then(json =>  card(json.meals))
+    }else{
+        alert('Please enter value ...')
+    }
     
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-    .then(response => response.json())
-    .then(json =>  card(json.meals))
 
 }
 
