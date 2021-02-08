@@ -18,7 +18,7 @@ const theMeal=()=>{
 const card=(data)=>{
    console.log(data)
    let foods=document.getElementById('foods')
-    data.map((data)=>{
+    {data ? (data.map((data)=>{
          const div=document.createElement('div')
         const card=`
             <div id='content' class='card'>
@@ -29,7 +29,9 @@ const card=(data)=>{
         `
          div.innerHTML=card;
         foods.appendChild(div);
-    })
+    }) ) : (
+        alert('Nothing found')
+    )}
     
 }
 
