@@ -16,7 +16,7 @@ const theMeal=()=>{
 }
 
 const card=(data)=>{
-   console.log(data)
+   
    let foods=document.getElementById('foods')
     {data ? (data.map((data)=>{
          const div=document.createElement('div')
